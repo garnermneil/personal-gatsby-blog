@@ -6,8 +6,8 @@ const Wrapper = styled.main.attrs({
 })`
   position: relative;
   border-radius: 5px;
-  width: 80%;
-  max-width: 770px;
+  width: 90%;
+  max-width: 900px;
   word-wrap: break-word;
   background-color: ${colors.backgroundArticle};
   margin: 0px auto 30px auto;

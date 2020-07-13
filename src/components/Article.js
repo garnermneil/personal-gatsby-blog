@@ -31,7 +31,7 @@ class Article extends React.Component {
           translations={post.frontmatter.translations}
         />
         <ArticleFooter>
-          <Bio />
+          {/* <Bio /> */}
         </ArticleFooter>
       </ArticleWrapper>
     )

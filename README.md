@@ -153,7 +153,7 @@ module.exports = {
     },
     {
       label: 'About',
-      url: '/about-gatsby-starter-morning-dew',
+      url: '/about-blog-template',
     },
     {
       label: 'Installation',
@@ -175,7 +175,7 @@ module.exports = {
         },
         {
           label: 'About',
-          url: '/about-gatsby-starter-morning-dew',
+          url: '/about-blog-template',
         },
         {
           label: 'Installation',

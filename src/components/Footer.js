@@ -135,7 +135,7 @@ const Footer = () => {
             </a>
             .
           </p>
-          <p className="footer-item-text">
+          {/* <p className="footer-item-text">
             Theme using{' '}
             <a
               className="footer-link"
@@ -155,7 +155,7 @@ const Footer = () => {
               {websiteHost.name}
             </a>
             .
-          </p>
+          </p> */}
         </div>
         {footerLinks.map((column, i) => {
           return <FooterColumn column={column} key={`footer-column-${i}`} />
