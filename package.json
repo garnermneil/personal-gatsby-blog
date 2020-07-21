@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-morning-dew",
+  "name": "personal-gatsby-blog",
   "version": "0.0.0-development",
   "description": "A Gatsby theme/starter to build lightning-fast blog/websites",
   "keywords": [
@@ -9,16 +9,16 @@
     "gatsby-theme",
     "starter"
   ],
-  "homepage": "https://github.com/maxpou/gatsby-starter-morning-dew#readme",
+  "homepage": "https://github.com/garnermneil/personal-gatsby-blog#readme",
   "bugs": {
-    "url": "https://github.com/maxpou/gatsby-starter-morning-dew/issues"
+    "url": "https://github.com/garnermneil/personal-gatsby-blog/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxpou/gatsby-starter-morning-dew.git"
+    "url": "https://github.com/garnermneil/personal-gatsby-blog.git"
   },
   "license": "MIT",
-  "author": "Maxence Poutord <maxence.poutord@gmail.com>",
+  "author": "Neil Garner",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",

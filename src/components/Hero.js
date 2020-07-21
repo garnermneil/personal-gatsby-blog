@@ -38,6 +38,7 @@ const HeroSubTitle = styled.h2`
 
 const Hero = props => {
   const { siteCover } = useSiteMetadata()
+	console.log("​siteCover", siteCover)
   const { fluid } = useSiteImages(siteCover)
   const heroImg = props.heroImg || fluid.src
 

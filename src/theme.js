@@ -1,3 +1,5 @@
+import { colors } from './tokens'
+
 /*
  * To override any of this theme’s tokens in your site, create a new file in
  * your site at `src/gatsby-starter-morning-dew/theme.js` and export an object from
@@ -18,4 +20,10 @@
  *
  * For a full list of tokens, see the `src/tokens/` directory in this theme.
  */
-export default {}
+export default {
+    colors: {
+        primary: `#01087C`,
+        primaryAlpha: `#01087C`,
+        headerText: 'white',
+    }
+}

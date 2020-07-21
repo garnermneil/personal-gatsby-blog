@@ -25,6 +25,7 @@ export default {
   primary: colors.grey500,
   primaryAlpha: `rgba(32, 35, 42, 0.85)`,
   text: colors.grey500,
+  headerText: '#57595d',
   background: '#f4f8fb',
   backgroundArticle: colors.white,
   heartFooter: 'red',

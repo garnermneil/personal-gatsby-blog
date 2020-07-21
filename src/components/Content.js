@@ -125,7 +125,8 @@ const ContentBody = styled.div`
     background: ${colors.highlight_code_oneline};
     color: #222222cc;
     padding: 0 3px;
-    font-size: 0.94em;
+    // font-size: 0.94em;
+    font-size: 1.3em;
     border-radius: 0.3rem;
     word-wrap: break-word;
   }

@@ -20,6 +20,7 @@ const HeaderWrapper = styled.header`
   @media ${media.medium} {
     position: fixed;
   }
+  color: ${colors.headerText}
 `
 
 const HeaderNav = styled.nav`
@@ -36,6 +37,7 @@ const HeaderNav = styled.nav`
   overflow-y: hidden;
   white-space: nowrap;
   padding: 0px 20px;
+  color: ${colors.headerText}
 `
 
 const HeaderLinksContainer = styled.div`
@@ -51,7 +53,7 @@ const HeaderLink = styled(Link)`
   position: relative;
   display: flex;
   align-items: center;
-  color: ${colors.textLightest};
+  color: ${colors.headerText};
   border: 0;
   margin: 0;
   padding: 8px 10px;
