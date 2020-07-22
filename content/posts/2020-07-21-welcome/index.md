@@ -9,5 +9,9 @@ tags:
   - misc
 ---
 
-Welcome to my blog.
+Welcome to my blog. This is a place to share my thoughts and experiences relating to various things ranging from coding to politics.
+
+The aim is to document and hopefully be useful to any passers by.
+
+Hope you enjoy and find it useful, for the moment, adios.
 

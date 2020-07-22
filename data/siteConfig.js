@@ -1,6 +1,6 @@
 module.exports = {
-  siteTitle: 'A view from a hill',
-  siteDescription: 'This is my meandering blog.',
+  siteTitle: 'The Muddled Pensieve',
+  siteDescription: `Hi, I'm Neil, a father, husband and full stack developer and these are my meandering thoughts.`,
   authorName: 'Neil Garner',
   twitterUsername: 'neilmgarner',
   authorAvatar: 'avatar.jpeg', // file in content/images
@@ -18,16 +18,12 @@ module.exports = {
   icon: 'content/images/baymax.png',
   postsPerPage: 6,
   disqusShortname: '',
-  headerTitle: 'A view from a hill',
+  headerTitle: 'The Muddled Pensieve',
   headerLinksIcon: '', //  (leave empty to disable: '')
   headerLinks: [
     {
       label: 'Blog',
       url: '/',
-    },
-    {
-      label: 'About',
-      url: '/all-about-this-blog',
     },
   ],
   // Footer information (ex: Github, Netlify...)
@@ -42,10 +38,6 @@ module.exports = {
         {
           label: 'Blog',
           url: '/',
-        },
-        {
-          label: 'About',
-          url: '/all-about-this-blog',
         },
       ],
     }
