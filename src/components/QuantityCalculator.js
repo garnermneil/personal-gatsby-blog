@@ -1,27 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const styles = {
-  headingrow: {
-    display: 'flex',
-    flexDirection: 'row',
-    marginTop: '30px',
-  },
-  resultsrow: {
-    display: 'flex',
-    flexDirection: 'row',
-    marginTop: '5px',
-    backgroundColor: 'white',
-    color: '#565679',
-  },
-  result: {
-    flex: '1',
-    marginRight: '5px',
-    padding: '5px',
-    textAlign: 'center'
-  },
-}
-
 const QuantityCalculatorWrapper = styled.section`
   margin-top: 50px;
   width: 100%;
@@ -43,6 +22,42 @@ const QuantityInput = styled.input`
   font-size: 16px;
 `
 
+const ResultsRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  background-color: white;
+  color: #565679;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`
+
+const RowCell = styled.div`
+  flex: 1;
+  marginright: 5px;
+  padding: 5px;
+  textalign: center;
+`
+
+const ResultCell = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+`
+
+const RowCellHeading = styled(ResultCell)`
+  background-color: #565679;
+  color: white;
+`
+
 export const QuantityCalculator = () => {
   const [quantity, setQuantity] = useState(undefined)
 
@@ -60,7 +75,7 @@ export const QuantityCalculator = () => {
 
   return (
     <QuantityCalculatorWrapper>
-        <h3>Want to adjust the values?</h3>
+      <h3>Want to adjust the values?</h3>
       <div>
         <Labels for="quantity">Quantity to convert</Labels>
         <QuantityInput
@@ -73,22 +88,33 @@ export const QuantityCalculator = () => {
       <div>
         {quantity && (
           <>
-            <div style={styles.headingrow}>
-              <div style={styles.result}>1/4</div>
-              <div style={styles.result}>1/3</div>
-              <div style={styles.result}>1/2</div>
-              <div style={styles.result}>1 1/2x</div>
-              <div style={styles.result}>2x</div>
-              <div style={styles.result}>3x</div>
-            </div>
-            <div style={styles.resultsrow}>
-              <div style={styles.result}>{calculate(QUARTER)}</div>
-              <div style={styles.result}>{calculate(THIRD)}</div>
-              <div style={styles.result}>{calculate(HALF)}</div>
-              <div style={styles.result}>{calculate(ONE_AND_HALF)}</div>
-              <div style={styles.result}>{calculate(DOUBLE)}</div>
-              <div style={styles.result}>{calculate(TRIPLE)}</div>
-            </div>
+            <ResultsRow>
+              <ResultCell>
+                <RowCellHeading>1/4</RowCellHeading>
+                <RowCell>{calculate(QUARTER)}</RowCell>
+              </ResultCell>
+              <ResultCell>
+                <RowCellHeading>1/3</RowCellHeading>
+                <RowCell>{calculate(THIRD)}</RowCell>
+              </ResultCell>
+              <ResultCell>
+                <RowCellHeading>1/2</RowCellHeading>
+                <RowCell>{calculate(HALF)}</RowCell>
+              </ResultCell>
+              <ResultCell>
+                <RowCellHeading>1 1/2x</RowCellHeading>
+                <RowCell>{calculate(ONE_AND_HALF)}</RowCell>
+              </ResultCell>
+              <ResultCell>
+                <RowCellHeading>2x</RowCellHeading>
+                <RowCell>{calculate(DOUBLE)}</RowCell>
+              </ResultCell>
+              <ResultCell>
+                <RowCellHeading>3x</RowCellHeading>
+                <RowCell>{calculate(TRIPLE)}</RowCell>
+              </ResultCell>
+            </ResultsRow>
+            <ResultsRow></ResultsRow>
           </>
         )}
       </div>
