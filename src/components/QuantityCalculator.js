@@ -2,16 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const styles = {
-  calculatorWrapper: {
-    marginTop: '50px',
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    backgroundColor: '#565679',
-    color: 'white',
-    padding: '25px'
-
-  },
   headingrow: {
     display: 'flex',
     flexDirection: 'row',
@@ -31,6 +21,16 @@ const styles = {
     textAlign: 'center'
   },
 }
+
+const QuantityCalculatorWrapper = styled.section`
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #565679;
+  color: white;
+  padding: 25px;
+`
 
 const Labels = styled.label`
   margin-right: 20px;
@@ -52,7 +52,7 @@ export const QuantityCalculator = () => {
   }
 
   return (
-    <section id="calculator-wrapper" style={styles.calculatorWrapper}>
+    <QuantityCalculatorWrapper>
         <h3>Want to adjust the values?</h3>
       <div>
         <Labels for="quantity">Quantity to convert</Labels>
@@ -85,6 +85,6 @@ export const QuantityCalculator = () => {
           </>
         )}
       </div>
-    </section>
+    </QuantityCalculatorWrapper>
   )
 }

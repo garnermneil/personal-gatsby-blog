@@ -141,7 +141,7 @@ module.exports = {
   background_color: '#ffffff',
   theme_color: '#222222',
   display: 'standalone',
-  icon: 'content/images/baymax.png',
+  // icon: 'content/images/baymax.png',
   postsPerPage: 6,
   disqusShortname: 'maxpou',
   headerTitle: 'gatsby-starter-morning-dew',
