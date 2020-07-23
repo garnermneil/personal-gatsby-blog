@@ -36,6 +36,13 @@ const Labels = styled.label`
   margin-right: 20px;
 `
 
+const QuantityInput = styled.input`
+  margin-top: 15px;
+  padding: 10px;
+  color: #565679;
+  font-size: 16px;
+`
+
 export const QuantityCalculator = () => {
   const [quantity, setQuantity] = useState(undefined)
 
@@ -56,7 +63,7 @@ export const QuantityCalculator = () => {
         <h3>Want to adjust the values?</h3>
       <div>
         <Labels for="quantity">Quantity to convert</Labels>
-        <input
+        <QuantityInput
           id="quantity"
           type="text"
           value={quantity}
