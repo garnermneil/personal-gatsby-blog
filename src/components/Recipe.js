@@ -1,5 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+
+const QUARTER = 0.25
+const HALF = 0.5
+const FULL = 0
+const DOUBLE = 2
 
 const RecipeContainer = styled.section`
   margin-top: 20px;
@@ -15,18 +20,108 @@ const IngredientContainer = styled.div`
   display: grid;
   grid-template-columns: minmax(75px, 25%) 1fr;
   margin-bottom: 5px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const MethodContainer = styled.div`
   margin-bottom: 15px;
 `
 
-const Ingredient = ({ ingredient }) => {
+const AdjustQuantityContainer = styled.section`
+  width: 60%;
+  margin: 0px auto 20px auto;
+  display: flex;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+`
+
+const SELECTED_BACKGROUND = '#101965'
+const NOT_SELECTED_BACKGROUND = '#898cbb'
+
+const Quantity = styled.p`
+  flex: 1;
+  cursor: pointer;
+  margin: 5px;
+  background-color: ${props =>
+    props.backgroundColour || NOT_SELECTED_BACKGROUND};
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 0.75em;
+`
+
+const AdjustQuantity = ({ quantityMultiplier, updateMultiplier }) => {
+  return (
+    <>
+      <h4>Adjust quantity</h4>
+      <AdjustQuantityContainer>
+        <Quantity
+          onClick={() => updateMultiplier(QUARTER)}
+          backgroundColour={
+            quantityMultiplier === QUARTER
+              ? SELECTED_BACKGROUND
+              : NOT_SELECTED_BACKGROUND
+          }
+        >
+          Quarter
+        </Quantity>
+        <Quantity
+          onClick={() => updateMultiplier(HALF)}
+          backgroundColour={
+            quantityMultiplier === HALF
+              ? SELECTED_BACKGROUND
+              : NOT_SELECTED_BACKGROUND
+          }
+        >
+          Half
+        </Quantity>
+        <Quantity
+          onClick={() => updateMultiplier(FULL)}
+          backgroundColour={
+            quantityMultiplier === FULL
+              ? SELECTED_BACKGROUND
+              : NOT_SELECTED_BACKGROUND
+          }
+        >
+          Full
+        </Quantity>
+        <Quantity
+          onClick={() => updateMultiplier(DOUBLE)}
+          backgroundColour={
+            quantityMultiplier === DOUBLE
+              ? SELECTED_BACKGROUND
+              : NOT_SELECTED_BACKGROUND
+          }
+        >
+          Double
+        </Quantity>
+      </AdjustQuantityContainer>
+    </>
+  )
+}
+
+const formatQuantity = (quantity, quantityMultiplier) => {
+  const value = quantity * quantityMultiplier
+  const hasDecimal = value - Math.floor(value) !== 0
+
+  return value.toFixed(hasDecimal ? 2 : 0)
+}
+
+const Ingredient = ({ ingredient, quantityMultiplier }) => {
+  const updatedQuantity =
+    ingredient.amount && quantityMultiplier > 0
+      ? formatQuantity(ingredient.amount, quantityMultiplier)
+      : ingredient.amount
+
   return (
     <IngredientContainer>
-      <span>
-        {ingredient.amount && `${ingredient.amount} ${ingredient.unit}`}
-      </span>
+      <span>{updatedQuantity && `${updatedQuantity} ${ingredient.unit}`}</span>
       <span>{ingredient.name}</span>
     </IngredientContainer>
   )
@@ -41,18 +136,29 @@ const Method = ({ method }) => {
 }
 
 export const Recipe = ({ recipe }) => {
+  const [quantityMultiplier, setQuantityMultiplier] = useState(0)
+
   return (
     <RecipeContainer>
       <IngredientsContainer>
         <h3>Ingredients</h3>
+
         <ol>
           {recipe &&
             recipe.ingredients.length > 0 &&
             recipe.ingredients.map((recipe, index) => (
-              <Ingredient key={index} ingredient={recipe} />
+              <Ingredient
+                key={index}
+                ingredient={recipe}
+                quantityMultiplier={quantityMultiplier}
+              />
             ))}
         </ol>
       </IngredientsContainer>
+      <AdjustQuantity
+        quantityMultiplier={quantityMultiplier}
+        updateMultiplier={setQuantityMultiplier}
+      />
       <section>
         <h3>Method</h3>
         <ol>
