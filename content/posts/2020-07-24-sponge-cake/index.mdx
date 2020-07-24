@@ -1,0 +1,61 @@
+---
+title: 'Sponge Cake'
+slug: sponge-cake
+date: 2020-07-24
+language: en
+# cover: ./scones.jpg
+# imageShare: ./social-media-card-generator-share.png
+tags:
+  - baking
+---
+
+import { QuantityCalculator } from "../../../src/components/QuantityCalculator.js";
+import { Recipe } from "../../../src/components/Recipe.js";
+
+export const recipe = {
+  ingredients: [{
+      name: 'self-raising flour',
+      amount: 175,
+      unit: 'g',
+    },
+    {
+      amount: 1,
+      name: 'baking powder',
+      unit: 'tsp'
+    },
+    {
+      amount: 3,
+      name: 'large eggs'
+    },
+    {
+      amount: 175,
+      unit: 'g',
+      name: 'golden caster sugar'
+    },
+    {
+      amount: 175,
+      unit: 'g',
+      name: 'butter, very soft at room temperature',
+    },
+    {
+      amount: 0.5, 
+      unit: 'tsp',
+      name: 'teaspoon vanilla extract'
+    }
+  ],
+  method: [
+    'Pre-heat the oven to gas mark 3, 325°F (170°C).',
+    'Take a very large mixing bowl.',
+    'Measure the flour and baking powder into a sieve and sift into a bowl, holding the sieve quite high to give the flour a good airing as it goes down. Now all you do is simply add all the other sponge ingredients to the bowl and, provided the butter is really soft, you just go in with an electric hand whisk and whisk everything together until you have a smooth, well-combined mixture. This will take 1 minute but, if you dont have an electric hand whisk, you can use a wooden spoon with a bit more effort.',
+    'What you now end up with is a mixture that drops easily off a spoon when you give it a tap on the side of the bowl. If it does seem a little too stiff, add 1-2 tablespoons of tap water and mix again. Now divide the mixture between the two tins, level it out and place on the centre shelf of the oven. It will take 30-35 minutes to cook – dont open the oven door until 30 minutes have elapsed.',
+    'To test if they are cooked or not, touch the centre lightly with your little finger, if it leaves no impression and springs back, the sponge is cooked. Remove from the oven and after about 30 seconds loosen the edges by sliding a palette knife all round, then turn them out onto a wire cooling tray.',
+    'Now carefully peel back the lining by gently pulling it back. Lightly place the other cooling tray on top and just flip them both over so that the tops are facing upwards (this is to prevent them sticking to the cooling tray For the filling, combine the mascarpone and fromage frais in a bowl, a balloon whisk will amalgamate them quicker. Add the level tablespoon of sugar and one teaspoon of vanilla extract. Now spread one tablespoon of jam over one of the sponge cakes, follow this with half the cream mixture then scatter the raspberries all over that. Now add the remaining cream mixture and drizzle it with the rest of the jam.',
+    'Place the second sponge cake on top. Press very lightly to sandwich everything together, then lightly dust the cake with icing sugar before serving.'
+  ]
+}
+
+A go to recipe when you need to create a sponge cake or use for cupcakes etc.
+
+<Recipe recipe={recipe} />
+
+Based on recipe from Delia Smith, found [here](https://www.deliaonline.com/recipes/international/european/british/all-in-one-sponge-cake-with-raspberry-and-mascarpone-cream)
