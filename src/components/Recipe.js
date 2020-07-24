@@ -121,7 +121,7 @@ const Ingredient = ({ ingredient, quantityMultiplier }) => {
 
   return (
     <IngredientContainer>
-      <span>{updatedQuantity && `${updatedQuantity} ${ingredient.unit && ingredient.unit}`}</span>
+      <span>{updatedQuantity && `${updatedQuantity} ${ingredient.unit != null ? ingredient.unit : ''}`}</span>
       <span>{ingredient.name}</span>
     </IngredientContainer>
   )
