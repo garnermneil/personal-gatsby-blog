@@ -140,6 +140,11 @@ export const Recipe = ({ recipe }) => {
 
   return (
     <RecipeContainer>
+      <AdjustQuantity
+        quantityMultiplier={quantityMultiplier}
+        updateMultiplier={setQuantityMultiplier}
+      />
+
       <IngredientsContainer>
         <h3>Ingredients</h3>
 
@@ -155,10 +160,6 @@ export const Recipe = ({ recipe }) => {
             ))}
         </ol>
       </IngredientsContainer>
-      <AdjustQuantity
-        quantityMultiplier={quantityMultiplier}
-        updateMultiplier={setQuantityMultiplier}
-      />
       <section>
         <h3>Method</h3>
         <ol>
