@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'The Muddled Pensieve',
+  siteTitle: 'The Muddied Pensieve',
   siteDescription: `Hi, I'm Neil, a father, husband and full stack developer and these are my meandering thoughts.`,
   authorName: 'Neil Garner',
   twitterUsername: 'neilmgarner',
@@ -18,7 +18,7 @@ module.exports = {
   // icon: 'content/images/baymax.png',
   postsPerPage: 6,
   disqusShortname: '',
-  headerTitle: 'The Muddled Pensieve',
+  headerTitle: 'The Muddied Pensieve',
   headerLinksIcon: '', //  (leave empty to disable: '')
   headerLinks: [
     {
