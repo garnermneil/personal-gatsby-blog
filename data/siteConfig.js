@@ -25,6 +25,10 @@ module.exports = {
       label: 'Blog',
       url: '/',
     },
+    {
+      label: 'About',
+      url: '/all-about-this-blog',
+    },
   ],
   // Footer information (ex: Github, Netlify...)
   websiteHost: {
@@ -38,6 +42,10 @@ module.exports = {
         {
           label: 'Blog',
           url: '/',
+        },
+        {
+          label: 'About',
+          url: '/all-about-this-blog',
         },
       ],
     }
