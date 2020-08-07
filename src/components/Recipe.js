@@ -39,6 +39,18 @@ const AdjustQuantityContainer = styled.section`
     width: 90%;
   }
 `
+const StyledCheckbox = styled.label`
+  /* Center the content horizontally */
+  align-items: center;
+  display: inline-flex;
+
+  /* Cursor */
+  cursor: pointer;
+`
+
+const HiddenCheckbox = styled.input`
+  display: none;
+`
 
 const SELECTED_BACKGROUND = '#101965'
 const NOT_SELECTED_BACKGROUND = '#898cbb'
@@ -127,10 +139,37 @@ const Ingredient = ({ ingredient, quantityMultiplier }) => {
   )
 }
 
-const Method = ({ method }) => {
+const FakeSquare = styled.div`
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+
+  /* Spacing */
+  margin-right: 8px;
+  padding: 4px;
+`
+
+const InnerSquare = styled.div`
+  border-radius: 4px;
+  height: 16px;
+  width: 16px;
+
+  background-color: ${props =>
+    props.backgroundColour || 'transparent'};
+`
+
+const Method = ({ method, index }) => {
+  const [selected, setSelected] = useState(false)
+
   return (
     <MethodContainer>
-      <span>{method}</span>
+      <StyledCheckbox>
+        <HiddenCheckbox id={`check-${index}`} type="checkbox" checked={selected}></HiddenCheckbox>
+          <FakeSquare onClick={() => setSelected(!selected)}>
+            <InnerSquare backgroundColour={selected ? '#00449E' : undefined}>
+            </InnerSquare>  
+          </FakeSquare>
+        {method}  
+      </StyledCheckbox>     
     </MethodContainer>
   )
 }
@@ -166,7 +205,7 @@ export const Recipe = ({ recipe }) => {
           {recipe &&
             recipe.method.length > 0 &&
             recipe.method.map((method, index) => (
-              <Method key={index} method={method} />
+              <Method key={index} method={method} index={index} />
             ))}
         </ol>
       </section>
