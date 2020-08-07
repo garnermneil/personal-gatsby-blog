@@ -46,6 +46,7 @@ const StyledCheckbox = styled.label`
 
   /* Cursor */
   cursor: pointer;
+  color: ${props => props.textColour};
 `
 
 const HiddenCheckbox = styled.input`
@@ -140,18 +141,18 @@ const Ingredient = ({ ingredient, quantityMultiplier }) => {
 }
 
 const FakeSquare = styled.div`
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid #01087C;
   border-radius: 4px;
 
   /* Spacing */
   margin-right: 8px;
-  padding: 4px;
+  //padding: 4px;
 `
 
 const InnerSquare = styled.div`
   border-radius: 4px;
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
 
   background-color: ${props =>
     props.backgroundColour || 'transparent'};
@@ -162,10 +163,10 @@ const Method = ({ method, index }) => {
 
   return (
     <MethodContainer>
-      <StyledCheckbox>
+      <StyledCheckbox textColour={selected ? '#d0d1d4' : '#3E4047'}>
         <HiddenCheckbox id={`check-${index}`} type="checkbox" checked={selected}></HiddenCheckbox>
           <FakeSquare onClick={() => setSelected(!selected)}>
-            <InnerSquare backgroundColour={selected ? '#00449E' : undefined}>
+            <InnerSquare backgroundColour={selected ? '#01087C' : undefined}>
             </InnerSquare>  
           </FakeSquare>
         {method}  
